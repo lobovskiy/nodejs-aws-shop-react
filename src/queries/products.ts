@@ -12,7 +12,8 @@ export function useAvailableProducts() {
         `${API_PATHS.product}/products`
       );
       return res.data;
-    }
+    },
+    { staleTime: 0 }
   );
 }
 

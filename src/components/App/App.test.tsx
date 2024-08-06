@@ -17,6 +17,7 @@ test("Renders products list", async () => {
       title: "Product 1",
       description: "Product 1 description",
       price: 1,
+      image: "https://image1.test.url",
       count: 1,
     },
     {
@@ -24,11 +25,12 @@ test("Renders products list", async () => {
       title: "Product 2",
       description: "Product 2 description",
       price: 2,
+      image: "https://image2.test.url",
       count: 2,
     },
   ];
   server.use(
-    rest.get(`${API_PATHS.bff}/product/available`, (req, res, ctx) => {
+    rest.get(`${API_PATHS.product}/products`, (req, res, ctx) => {
       return res(
         ctx.status(200),
         ctx.delay(),
